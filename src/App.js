@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Random from "./RandomNumber";
+import BrokenButton from "./BrokenButton";
 
 // We're extending from the React.Component class
 class App extends Component {
@@ -18,6 +19,7 @@ class App extends Component {
         <h1> Your score is: {this.state.score}</h1>
         {/* <Random maxNumber={100} /> */}
         <button>Click me</button>
+        <BrokenButton />
       </div>
     );
   }
