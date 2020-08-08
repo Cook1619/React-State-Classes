@@ -44,23 +44,22 @@ import BrokenButton from "./BrokenButton";
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      number: 0,
-      youWin: false,
-    };
+    this.state = { number: 0 };
     this.handleNumber = this.handleNumber.bind(this);
   }
   handleNumber() {
-    this.setState({ number: this.state.number + 1 });
+    let random = Math.floor(Math.random() * 10) + 1;
+    this.setState({ number: random });
   }
   render() {
     return (
       <div>
         <h1>Your number is: {this.state.number}</h1>
-        {this.state.number <= 7 && (
+        {this.state.number === 7 ? (
+          <h3>YOU WIN</h3>
+        ) : (
           <button onClick={this.handleNumber}>Click me</button>
         )}
-        {this.state.number > 7 && <h3>YOU WIN</h3>}
       </div>
     );
   }
